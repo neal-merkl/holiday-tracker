@@ -12,4 +12,24 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datetimepicker
  */
+#header {
+  background-color: #404040;
+  color: white;
+  text-align: left;
+  padding: 5px;
+  padding-left: 80px;
+}
+
+#main {
+  font-size: 50px;
+  text-align: center;
+}
+
+#footer {
+  font-size: 20px;
+  text-align: center;
+  border-top: groove;
+  margin: 60px;
+}
