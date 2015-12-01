@@ -16,7 +16,3 @@
 //= require bootstrap-datetimepicker
 //= require turbolinks
 //= require_tree .
-
-$(function() {
-  $('.datepicker').datepicker();
-});

@@ -33,3 +33,8 @@
   border-top: groove;
   margin: 60px;
 }
+
+#datepicker {
+  padding-left: 470px;
+  margin: auto;
+}
