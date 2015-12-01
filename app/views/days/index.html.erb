@@ -3,7 +3,7 @@
     Pick a date, any date...
   </p>
   <div id='datepicker' class="container">
-      <div class="col-sm-4">
+      <div class="col-sm-6">
           <div class="form-group">
               <div class='input-group date' id='datetimepicker'>
                   <input type='text' class="form-control" />
@@ -17,9 +17,10 @@
       <script type="text/javascript">
           $(function () {
               $('#datetimepicker').datetimepicker({
-                  viewMode: 'years'
+                  viewMode: 'years',
+                  format: 'DD/MM/YYYY'
               });
           });
       </script>
-  </div>
+    </div>
 </div>
