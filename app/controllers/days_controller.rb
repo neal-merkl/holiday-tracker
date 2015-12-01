@@ -4,8 +4,8 @@ class DaysController < ApplicationController
   end
 
   def show
-    @day = Day.find_by(id: params[:id])
+    @day = Day.find_by(date: params[:date])
     @holidays = @day.holidays
   end
-  
+
 end
