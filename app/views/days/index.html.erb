@@ -3,24 +3,27 @@
     Pick a date, any date...
   </p>
   <div id='datepicker' class="container">
-      <div class="col-sm-6">
-          <div class="form-group">
-              <div class='input-group date' id='datetimepicker'>
-                  <input type='text' class="form-control" />
-                  <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar">
-                      </span>
-                  </span>
-              </div>
-          </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker'>
+          <form action="index.html" method="get">
+            <input type='text' class="form-control" on/>
+          </form>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar">
+            </span>
+          </span>
+        </div>
       </div>
-      <script type="text/javascript">
-          $(function () {
-              $('#datetimepicker').datetimepicker({
-                  viewMode: 'years',
-                  format: 'DD/MM/YYYY'
-              });
-          });
-      </script>
     </div>
+  </div>
 </div>
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker').datetimepicker({
+      viewMode: 'years',
+      format: 'DD/MM/YYYY'
+    });
+  });
+</script>
