@@ -11,11 +11,13 @@ class DaysController < ApplicationController
     day = date[0]
     month = date[1]
     year = date[2]
+    @strings = []
     @holidays = []
     @@countries.each do |c|
-       HTTParty.get("#{@@url}country=#{c}&year=#{year}&month=#{month}&day=#{day}")["holidays"].each do |h|
-         @holidays << h["name"]
-       end
+      string = "#{@@url}country=#{c}&year=#{year}&month=#{month}&day=#{day}"
+      @strings << string
+      holiday = HTTParty.get("#{@@url}country=#{c}&year=#{year}&month=#{month}&day=#{day}")["holidays"][0]
+      @holidays << holiday
     end
 
   end
