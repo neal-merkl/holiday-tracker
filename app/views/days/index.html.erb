@@ -9,7 +9,7 @@
           <form action="index.html" method="get">
             <input type='text' class="form-control" id='datetimepicker' on/>
           </form>
-          <span class="input-group-addon">
+          <span class="input-group-addon" onclick="sendDate()">
             <span class="glyphicon glyphicon-ok">
             </span>
           </span>
@@ -18,12 +18,3 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  $(function () {
-    $('#datetimepicker').datetimepicker({
-      viewMode: 'years',
-      format: 'DD-MM-YYYY'
-    });
-  });
-</script>
