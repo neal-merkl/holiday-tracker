@@ -11,7 +11,7 @@
           <% if @holidays[i].nil? %>
             <%= "None" %>
           <% else %>
-            <%= @holidays[i] %>
+            <%= link_to @holidays[i], '#' %>
           <% end %>
         </li>
       <% end %>
