@@ -8,14 +8,8 @@
     <% else %>
       <% @holidays.each do |h| %>
         <li>
-          <div>
-            <div>
-              <%= h[1][0] %>
-            </div>
-            <div>
-              <%= link_to h[0], '#', id: "h-link" %>
-            </div>
-          </div>
+          <% holiday = "#{h[1][0]}:  #{h[0]}" %>
+          <%= link_to holiday, "#{h[0]}/#{h[1][0]}/#{@year}" %>
         </li>
       <% end %>
     <% end %>
