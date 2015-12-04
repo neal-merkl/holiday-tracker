@@ -1,4 +1,3 @@
-d74 = Day.create(date: "2015-07-04")
-july4 = Holiday.create(name: "July 4th")
+#countries = ["BE", "BR", "CA", "CZ", "DE", "FR", "GB", "NO", "PL", "SK", "SL", "US"]
 
-d74.holidays << july4
+#HTTParty.get("#{url}country=#{c}&year=#{year}&month=#{month}&day=#{day}")["holidays"].each do |h|
