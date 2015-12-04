@@ -5,11 +5,42 @@ class ApplicationController < ActionController::Base
   helper_method :url, :countries
 
   def url
-    @url = "http://holidayapi.com/v1/holidays?"
+    "http://holidayapi.com/v1/holidays?"
   end
 
   def countries
-    @countries = ["BE", "BR", "CA", "CZ", "DE", "FR", "GB", "NO", "PL", "SK", "SL", "US"]
+    ["BE", "BR", "CA", "CZ", "DE", "FR", "GB", "NO", "PL", "SK", "SL", "US"]
+  end
+
+  def get_year_holidays(y)
+    holidays = []
+    countries.each do |c|
+      HTTParty.get("#{url}country=#{c}&year=#{y}")["holidays"].each do |h|
+        holidays << h["name"]
+      end
+    end
+    holidays
+  end
+
+  def get_day_holidays(y, m, d)
+    holidays = []
+    countries.each do |c|
+      HTTParty.get("#{url}country=#{c}&year=#{y}&month=#{m}&day=#{d}")["holidays"].each do |h|
+        holidays << h["name"]
+      end
+    end
+    holidays
+  end
+
+  # s is start year
+  def get_country_holidays(c, s)
+    holidays = []
+    (s-5..s+5).each do |y|
+      HTTParty.get("#{url}country=#{c}&year=#{y}")["holidays"].each do |h|
+        holidays << h["name"]
+      end
+    end
+    holidays
   end
 
 end

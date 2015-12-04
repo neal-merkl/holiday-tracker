@@ -1,0 +1,17 @@
+<div>
+  Occurrences of holiday in past and future years
+  <% @year_occurrences.each do |h| %>
+    <div>
+      <%= h %>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  Occurrences of holiday in other countries
+  <% @country_occurences.each do |h| %>
+    <div>
+      <%= h %>
+    </div>
+  <% end %>
+</div>

@@ -7,7 +7,7 @@
       </li>
     <% else %>
       <% (0...12).each do |i| %>
-        <li>  <%= "#{@countries[i]}: " %>
+        <li>  <%= "#{countries[i]}: " %>
           <% if @holidays[i].nil? %>
             <%= "None" %>
           <% else %>
