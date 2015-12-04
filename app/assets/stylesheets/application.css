@@ -54,3 +54,17 @@
   color: #fff;
   text-decoration: none;
 }
+
+section {
+    height: 400px;
+    padding-top: 50px;
+    padding-left: 80px;
+}
+
+div#left {
+    float: left;
+}
+
+div#right {
+    margin-left: 50%;
+}

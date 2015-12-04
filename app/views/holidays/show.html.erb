@@ -1,17 +1,23 @@
-<div>
-  Occurrences of holiday in past and future years
-  <% @year_occurrences.each do |h| %>
-    <div>
-      <%= h %>
-    </div>
-  <% end %>
-</div>
+<section>
+  <div id='left'>
+    <h4><%= "Past/Future occurrences of #{@holiday} in #{@country}" %></h4>
+    <ul>
+      <% @year_occurrences.each do |h| %>
+        <li>
+          <%= h[0].split("-").reverse.join("-") %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 
-<div>
-  Occurrences of holiday in other countries
-  <% @country_occurences.each do |h| %>
-    <div>
-      <%= h %>
-    </div>
-  <% end %>
-</div>
+  <div id='right'>
+    <h4><%= "International occurrences of #{@holiday}" %></h4>
+    <ul>
+      <% @country_occurences.each do |h| %>
+        <li>
+          <%= "#{h["country"]}: #{h["date"].split("-").reverse.join("-")}" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
