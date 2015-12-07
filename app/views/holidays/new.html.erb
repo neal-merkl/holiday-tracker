@@ -4,8 +4,11 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
 
-    <%= f.label :date %>
+    <%= f.label "#{:date} (DD-MM-YYYY)" %>
     <%= f.text_field :date %>
+
+    <%= f.label :country %>
+    <%= f.select :country, options_for_select(['BE', 'BR', 'CA', 'CZ', 'DE', 'FR', 'GB', 'NO', 'PL', 'SK', 'SL', 'US']) %>
 
     <%= f.submit "Add new Holiday", class: "btn btn-primary" %>
   <% end %>

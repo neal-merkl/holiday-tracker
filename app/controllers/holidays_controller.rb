@@ -13,10 +13,16 @@ class HolidaysController < ApplicationController
   end
 
   def new
-    @holiday = Holiday.new
+    @holiday = Holiday.new # want to send
   end
 
   def create
+    @holiday = Holiday.new(holiday_params)
+    if @holiday.save
+      redirect_to date_url(@holiday.date)
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -27,5 +33,11 @@ class HolidaysController < ApplicationController
 
   def destroy
   end
+
+  private
+  
+    def holiday_params
+      params.require(:holiday).permit(:name, :date)
+    end
 
 end
