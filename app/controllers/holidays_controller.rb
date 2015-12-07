@@ -12,4 +12,20 @@ class HolidaysController < ApplicationController
     @year_occurrences.select! { |d, n| n.eql? @holiday }
   end
 
+  def new
+    @holiday = Holiday.new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
 end
