@@ -17,7 +17,7 @@ class HolidaysController < ApplicationController
   end
 
   def new
-    @holiday = Holiday.new # want to send
+    @holiday = Holiday.new
   end
 
   def create
@@ -31,10 +31,11 @@ class HolidaysController < ApplicationController
   end
 
   def edit
-    @holiday = Holiday.find(params[:id])
+    @holiday = Holiday.find_by(id: params[:id])
   end
 
   def update
+    @holiday = Holiday.find_by(id: params[:id])
     if @holiday.update_attributes(holiday_params)
       flash[:success] = "Successfully edited holiday"
       redirect_to date_url(@holiday.date)
