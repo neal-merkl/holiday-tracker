@@ -1,5 +1,9 @@
 class HolidaysController < ApplicationController
 
+  def index
+    @holidays = Holiday.all
+  end
+
   def show
     @holiday = params[:holiday]
     @country = params[:country]
@@ -19,6 +23,7 @@ class HolidaysController < ApplicationController
   def create
     @holiday = Holiday.new(holiday_params)
     if @holiday.save
+      flash[:success] = "Successfully added new holiday"
       redirect_to date_url(@holiday.date)
     else
       render 'new'
@@ -26,16 +31,27 @@ class HolidaysController < ApplicationController
   end
 
   def edit
+    @holiday = Holiday.find(params[:id])
   end
 
   def update
+    if @holiday.update_attributes(holiday_params)
+      flash[:success] = "Successfully edited holiday"
+      redirect_to date_url(@holiday.date)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    date = @holiday.find(params[:id]).date
+    @holiday.find(params[:id]).destroy
+    flash[:success] = "Holiday successfully deleted"
+    redirect_to date_url(date)
   end
 
   private
-  
+
     def holiday_params
       params.require(:holiday).permit(:name, :date)
     end
