@@ -45,8 +45,8 @@ class HolidaysController < ApplicationController
   end
 
   def destroy
-    date = @holiday.find(params[:id]).date
-    @holiday.find(params[:id]).destroy
+    date = Holiday.find(params[:id]).date
+    Holiday.find(params[:id]).destroy
     flash[:success] = "Holiday successfully deleted"
     redirect_to date_url(date)
   end
