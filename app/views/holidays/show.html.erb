@@ -1,10 +1,10 @@
 <section>
   <div id='left'>
-    <h4><%= "Past/Future occurrences of #{@holiday} in #{@country}" %></h4>
+    <h4><%= "Other occurrences of #{@holiday} in #{@country}" %></h4>
     <ul>
       <% @year_occurrences.each do |h| %>
         <li>
-          <% date = h[0].split("-").reverse.join("-")%>
+          <% date = h[0].split("-").reverse.join("-") %>
           <%= link_to date, "/#{date}" %>
         </li>
       <% end %>

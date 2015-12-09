@@ -22,20 +22,8 @@ class ApplicationController < ActionController::Base
     holidays
   end
 
-  def get_year_holidays(y)
-    holidays = []
-    countries.each do |c|
-      HTTParty.get("#{url}country=#{c}&year=#{y}")["holidays"].each do |i|
-        i[1].each do |h|
-          holidays << h
-        end
-      end
-    end
-    holidays
-  end
-
   # s is start year
-  def get_country_holidays(c, s)
+  def get_year_holidays(c, s)
     json = []
     holidays = {}
     (s-5..s+5).each do |y|
@@ -43,10 +31,21 @@ class ApplicationController < ActionController::Base
         json << h[1]
       end
     end
-
     json.each do |i|
       i.each do |h|
         holidays[h["date"]] = h["name"]
+      end
+    end
+    holidays
+  end
+
+  def get_country_holidays(y)
+    holidays = []
+    countries.each do |c|
+      HTTParty.get("#{url}country=#{c}&year=#{y}")["holidays"].each do |i|
+        i[1].each do |h|
+          holidays << h
+        end
       end
     end
     holidays

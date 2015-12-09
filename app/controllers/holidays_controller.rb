@@ -9,11 +9,19 @@ class HolidaysController < ApplicationController
     @country = params[:country]
     @year = params[:year]
 
-    @country_occurences = get_year_holidays(@year)
-    @country_occurences.select! { |i| i["name"].eql? @holiday }
+    api = get_year_holidays(@country, @year.to_i).select! { |d, n| n.eql? @holiday }
+    Holiday.where("name = ? AND country = ?", @holiday, @country).each do |o|
+      api[o.date.split("-").reverse.join("-")] = o.name
+    end
+    @year_occurrences = api.sort_by { |i| i }
 
-    @year_occurrences = get_country_holidays(@country, @year.to_i)
-    @year_occurrences.select! { |d, n| n.eql? @holiday }
+    api = get_country_holidays(@year).select! { |i| i["name"].eql? @holiday }
+    Holiday.where("name = ?", @holiday).each do |o|   #need to query for year
+      api << { "name" => o.name,
+               "country" => o.country,
+               "date" => o.date.split("-").reverse.join("-") }
+    end
+    @country_occurences = api.sort_by { |i| i[0] }
   end
 
   def new
