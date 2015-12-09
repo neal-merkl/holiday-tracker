@@ -4,7 +4,8 @@
     <ul>
       <% @year_occurrences.each do |h| %>
         <li>
-          <%= h[0].split("-").reverse.join("-") %>
+          <% date = h[0].split("-").reverse.join("-")%>
+          <%= link_to date, "/#{date}" %>
         </li>
       <% end %>
     </ul>
@@ -15,7 +16,9 @@
     <ul>
       <% @country_occurences.each do |h| %>
         <li>
-          <%= "#{h["country"]}: #{h["date"].split("-").reverse.join("-")}" %>
+          <% date = h["date"].split("-").reverse.join("-") %>
+          <%= "#{h["country"]}: " %>
+          <%= link_to date, "/#{date}" %>
         </li>
       <% end %>
     </ul>
