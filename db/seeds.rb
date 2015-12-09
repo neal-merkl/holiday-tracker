@@ -1,3 +1,5 @@
-#countries = ["BE", "BR", "CA", "CZ", "DE", "FR", "GB", "NO", "PL", "SK", "SL", "US"]
-
-#HTTParty.get("#{url}country=#{c}&year=#{year}&month=#{month}&day=#{day}")["holidays"].each do |h|
+h1 = Holiday.create(name: "h1", date: "25-12-2015", country: 'DE')
+h2 = Holiday.create(name: "h2", date: "25-12-2015", country: 'BR')
+h3 = Holiday.create(name: "h3", date: "01-01-2013", country: 'US')
+h4 = Holiday.create(name: "h4", date: "01-01-2014", country: 'CA')
+h5 = Holiday.create(name: "h5", date: "1-12-2016", country: 'BR')

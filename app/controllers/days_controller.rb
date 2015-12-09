@@ -10,7 +10,11 @@ class DaysController < ApplicationController
     month = date[1]
     @year = date[2]
 
-    @holidays = get_day_holidays(@year, month, day)
+    api = get_day_holidays(@year, month, day)
+    Holiday.where("date = ?", "#{day}-#{month}-#{@year}").each do |o|
+      api[o.name] = [o.country, o.date]
+    end
+    @holidays = api.sort_by { |i| i[1] }
   end
 
 end

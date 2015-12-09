@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
         holidays[h["name"]] = [h["country"], h["date"]]
       end
     end
-    holidays.sort_by { |i| i[1] }
+    holidays
   end
 
   def get_year_holidays(y)
