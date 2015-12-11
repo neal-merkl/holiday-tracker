@@ -1,9 +1,16 @@
-<%= link_to "New", "/holidays/new" %>
-<% @holidays.each do |h| %>
-  <div>
-    <%= "#{h.name}, #{h.country}: #{h.date} " %>
-    <%= link_to "Edit", "/holidays/#{h.id}/edit" %>
-    <%= link_to "Delete", "/holidays/#{h.id}", :method => :delete,
-                :data => { :confirm => 'Delete Holiday?' } %>
-  </div>
-<% end %>
+<h1>Manage Holidays</h1>
+<%= link_to "New", "/holidays/new",
+                  :class => 'btn btn-success' %>
+<div>
+  <% @holidays.each do |h| %>
+    <div class='custom-holiday'>
+      <%= "#{h.name}, #{h.country}: #{h.date} " %>
+      <%= link_to "Edit", "/holidays/#{h.id}/edit",
+                  :class => 'btn btn-primary' %>
+      <%= link_to "Delete", "/holidays/#{h.id}",
+                  :class => 'btn btn-danger',
+                  :method => :delete,
+                  :data => { :confirm => 'Delete Holiday?' } %>
+    </div>
+  <% end %>
+</div>

@@ -18,7 +18,7 @@
   background-color: #404040;
   color: white;
   text-align: left;
-  padding: 5px;
+  padding: 1px;
   padding-left: 80px;
 }
 
@@ -30,8 +30,20 @@
 #footer {
   font-size: 20px;
   text-align: center;
-  border-top: groove;
+  border-top: 3px groove;
   margin: 60px;
+  font-size: 15px;
+  padding: 7px;
+}
+
+#footer p {
+  padding-right: 25px;
+  float: right;
+}
+
+#footer a {
+  padding-left: 25px;
+  float: left;
 }
 
 #datepicker {
