@@ -7,5 +7,5 @@ $(function () {
 
 function sendDate() {
   var date = document.getElementById("datetimepicker").value;
-  window.location.href = date;
+  window.location.href = "/days/" + date;
 }

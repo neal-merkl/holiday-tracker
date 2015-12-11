@@ -1,5 +1,9 @@
+<%= link_to "New", "/holidays/new" %>
 <% @holidays.each do |h| %>
   <div>
-    <%= h %>
+    <%= "#{h.name}, #{h.country}: #{h.date} " %>
+    <%= link_to "Edit", "/holidays/#{h.id}/edit" %>
+    <%= link_to "Delete", "/holidays/#{h.id}", :method => :delete,
+                :data => { :confirm => 'Delete Holiday?' } %>
   </div>
 <% end %>

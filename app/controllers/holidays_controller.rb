@@ -1,4 +1,6 @@
 class HolidaysController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "password",
+                               except: [:show]
 
   def index
     @holidays = Holiday.all
@@ -32,7 +34,7 @@ class HolidaysController < ApplicationController
     @holiday = Holiday.new(holiday_params)
     if @holiday.save
       flash[:success] = "Successfully added new holiday"
-      redirect_to date_url(@holiday.date)
+      redirect_to '/holidays'
     else
       render 'new'
     end
@@ -46,7 +48,7 @@ class HolidaysController < ApplicationController
     @holiday = Holiday.find_by(id: params[:id])
     if @holiday.update_attributes(holiday_params)
       flash[:success] = "Successfully edited holiday"
-      redirect_to date_url(@holiday.date)
+      redirect_to '/holidays'
     else
       render 'edit'
     end
@@ -56,7 +58,7 @@ class HolidaysController < ApplicationController
     date = Holiday.find(params[:id]).date
     Holiday.find(params[:id]).destroy
     flash[:success] = "Holiday successfully deleted"
-    redirect_to date_url(date)
+    redirect_to '/holidays'
   end
 
   private

@@ -9,7 +9,7 @@
       <% @holidays.each do |h| %>
         <li>
           <% holiday = "#{h[1][0]}:  #{h[0]}" %>
-          <%= link_to holiday, "#{h[0]}/#{h[1][0]}/#{@year}" %>
+          <%= link_to holiday, "/#{h[0]}/#{h[1][0]}/#{@year}" %>
         </li>
       <% end %>
     <% end %>
