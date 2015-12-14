@@ -17,23 +17,32 @@
 #header {
   background-color: #404040;
   color: white;
-  text-align: left;
-  padding: 1px;
+  margin: -5px;
+  margin-bottom: -20px;
+  padding: 15px;
   padding-left: 80px;
+  font-size: 18px;
 }
 
-#main {
-  font-size: 50px;
-  text-align: center;
+#logo {
+  font-size: 37px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 #footer {
-  font-size: 20px;
-  text-align: center;
-  border-top: 3px groove;
   margin: 60px;
-  font-size: 15px;
-  padding: 7px;
+  margin-top: 100px;
+  padding: 10px;
+  border-top: 3px groove;
+  font-size: 16px;
 }
 
 #footer p {
@@ -46,37 +55,34 @@
   float: left;
 }
 
+#main {
+  font-size: 60px;
+  text-align: center;
+}
+
 #datepicker {
   padding-left: 390px;
 }
 
-#show {
-  padding-left: 80px;
+.standard-view {
+  padding-top: 10px;
+  padding-left: 150px;
 }
 
-#logo {
-  font-size: 1.2em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
+li {
+  margin: 0 0 5px 0;
 }
 
 section {
-    height: 400px;
-    padding-top: 50px;
-    padding-left: 80px;
+  height: 400px;
+  padding-top: 10px;
+  padding-left: 150px;
 }
 
 div#left {
-    float: left;
+  float: left;
 }
 
 div#right {
-    margin-left: 50%;
+  margin-left: 50%;
 }

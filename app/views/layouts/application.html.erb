@@ -11,14 +11,19 @@
   </head>
 
   <body>
-    <div id='header'>
-      <div class='logo'>
-        <h3><%= link_to "Holiday Tracker", root_path, id: "logo" %></h3>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid" id="header">
+        <div class="navbar-header">
+          <%= link_to "Holiday Tracker", root_path, :class => "navbar-brand", :id => 'logo'%>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href='/holidays'>Admin</a></li>
+            <li><a href="#">Sys Admin</a></li>
+          </ul>
+        </div>
       </div>
-      <div class='admin-button'>
-        <a href='/holidays'>Admin</a>
-      </div>
-    </div>
+    </nav>
 
     <%= yield %>
 
