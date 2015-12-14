@@ -7,7 +7,7 @@
                       :id => 'new-button' %>
       <% @holidays.each do |h| %>
         <li>
-          <%= "#{h.name}, #{h.country}: #{h.date} " %>
+          <%= "#{h.country}: #{h.name} #{h.date}" %>
           <%= link_to "Edit", "/holidays/#{h.id}/edit",
                       :class => 'btn btn-primary edit-delete' %>
           <%= link_to "Delete", "/holidays/#{h.id}",
