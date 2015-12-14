@@ -7,34 +7,34 @@ h6 = Holiday.create(name: "Christmas", date: "01-08-1996", country: 'US')
 
 def rand_country(num)
   case num
-  when 0
-    "BE"
   when 1
-    "BR"
+    "BE"
   when 2
-    "CA"
+    "BR"
   when 3
-    "CZ"
+    "CA"
   when 4
-    "DE"
+    "CZ"
   when 5
-    "FR"
+    "DE"
   when 6
-    "GB"
+    "FR"
   when 7
-    "NO"
+    "GB"
   when 8
-    "PL"
+    "NO"
   when 9
-    "SK"
+    "PL"
   when 10
-    "SL"
+    "SK"
   when 11
+    "SL"
+  else
     "US"
   end
 end
 
 25.times do |i|
   Holiday.create(name: "h#{i+6}", date: "#{1 + rand(28)}-#{1 + rand(12)}-#{1 + rand(3000)}",
-                 country: "#{rand_country(i)}")
+                 country: "#{rand_country(1 + rand(13))}")
 end
