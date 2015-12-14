@@ -3,7 +3,7 @@ class HolidaysController < ApplicationController
                                except: [:show]
 
   def index
-    @holidays = Holiday.all
+    @holidays = Holiday.paginate(page: params[:page], per_page: 10).order('created_at DESC')
   end
 
   def show

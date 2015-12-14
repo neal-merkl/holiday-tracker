@@ -86,3 +86,28 @@ div#left {
 div#right {
   margin-left: 50%;
 }
+
+.custom-holiday {
+  list-style: none;
+}
+
+.custom-holiday li {
+  padding: 15px 0;
+  border-bottom: 1px groove #cccccc;
+  margin-right: 150px;
+}
+
+#new-button {
+  margin-top: -30px;
+  margin-right: 150px;
+  float: left;
+}
+
+.edit-delete {
+  float: right;
+}
+
+.pagination {
+  margin-left: 200px;
+  margin-top: -1px;
+}
