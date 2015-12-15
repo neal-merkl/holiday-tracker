@@ -7,13 +7,17 @@
                       :id => 'new-button' %>
       <% @holidays.each do |h| %>
         <li>
-          <%= "#{h.country}: #{h.name} #{h.date}" %>
-          <%= link_to "Edit", "/holidays/#{h.id}/edit",
-                      :class => 'btn btn-primary edit-delete' %>
-          <%= link_to "Delete", "/holidays/#{h.id}",
-                      :class => 'btn btn-danger edit-delete',
-                      :method => :delete,
-                      :data => { :confirm => 'Delete Holiday?' } %>
+          <%= "#{h.country} - " %>
+          <%= link_to "#{h.name}: ", "/#{h.name}/#{h.country}/#{h.date[-4,4]}"%>
+          <%= link_to "#{h.date}", "/days/#{h.date}" %>
+          <div class='edit-delete'>
+            <%= link_to "Edit", "/holidays/#{h.id}/edit",
+                        :class => 'btn btn-primary' %>
+            <%= link_to "Delete", "/holidays/#{h.id}",
+                        :class => 'btn btn-danger',
+                        :method => :delete,
+                        :data => { :confirm => 'Delete Holiday?' } %>
+          </div>
         </li>
       <% end %>
   </ul>

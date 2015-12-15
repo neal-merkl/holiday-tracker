@@ -1,6 +1,5 @@
 class HolidaysController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "password",
-                               except: [:show]
+  http_basic_authenticate_with name: "admin", password: "admin", except: :show
 
   def index
     @holidays = Holiday.paginate(page: params[:page], per_page: 10).order('created_at DESC')
