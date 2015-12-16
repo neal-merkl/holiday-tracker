@@ -92,6 +92,7 @@ div#right {
 }
 
 .custom-holiday {
+  margin-top: 40px;
   list-style: none;
 }
 
@@ -102,7 +103,7 @@ div#right {
 }
 
 #index-top {
-  height: 80px;
+  height: 30px;
   position: relative;
 }
 
@@ -112,8 +113,8 @@ div#right {
 }
 
 #new-button {
-  margin-top: -30px;
   margin-right: 150px;
+  margin-top: -32px;
   float: left;
 }
 

@@ -1,3 +1,11 @@
+<script>
+var country_select = document.getElementById('country-filter');
+country_select.onchange = function(){
+  window.location = "holidays?page=1&country="
+                    + this.options[this.selectedIndex].value);
+};
+</script>
+
 <div class='index-view'>
   <h1>Manage Holidays</h1>
   <div id='index-top'>
@@ -5,6 +13,7 @@
                       (window.location = 'holidays?page=1&country='
                                         + this.options[this.selectedIndex].value);">
       <option value="">Select...</option>
+      <option value="">All</option>
       <option value="BE">BE</option>
       <option value="BR">BR</option>
       <option value="CA">CA</option>
@@ -18,7 +27,7 @@
       <option value="SL">SL</option>
       <option value="US">US</option>
     </select>
-    
+
     <%= will_paginate %>
   </div>
   <ul class='custom-holiday'=>

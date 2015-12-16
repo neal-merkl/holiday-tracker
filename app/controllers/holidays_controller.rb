@@ -3,8 +3,12 @@ class HolidaysController < ApplicationController
 
   def index
     country = params[:country]
-    sql = "SELECT * FROM Holidays WHERE country='#{country}'"
-    @holidays = Holiday.paginate_by_sql(sql, page: params[:page], per_page: 10)
+    if country
+      sql = "SELECT * FROM Holidays WHERE country='#{country}'"
+      @holidays = Holiday.paginate_by_sql(sql, page: params[:page], per_page: 10)
+    else
+      @holidays = Holiday.paginate(page: params[:page], per_page: 10)
+    end
   end
 
   def show
