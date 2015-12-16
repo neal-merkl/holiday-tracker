@@ -38,3 +38,8 @@ end
   Holiday.create(name: "h#{i+6}", date: "#{1 + rand(28)}-#{1 + rand(12)}-#{1 + rand(3000)}",
                  country: "#{rand_country(1 + rand(13))}")
 end
+
+10.times do |i|
+  Holiday.create(name: "US-#{i}", date: "#{1 + rand(28)}-#{1 + rand(12)}-#{1 + rand(3000)}",
+                 country: "US")
+end

@@ -1,6 +1,26 @@
 <div class='index-view'>
   <h1>Manage Holidays</h1>
-  <%= will_paginate %>
+  <div id='index-top'>
+    <select id='country-filter' onchange="this.options[this.selectedIndex].value &&
+                      (window.location = 'holidays?page=1&country='
+                                        + this.options[this.selectedIndex].value);">
+      <option value="">Select...</option>
+      <option value="BE">BE</option>
+      <option value="BR">BR</option>
+      <option value="CA">CA</option>
+      <option value="CZ">CZ</option>
+      <option value="DE">DE</option>
+      <option value="FR">FR</option>
+      <option value="GB">GB</option>
+      <option value="NO">NO</option>
+      <option value="PL">PL</option>
+      <option value="SK">SK</option>
+      <option value="SL">SL</option>
+      <option value="US">US</option>
+    </select>
+    
+    <%= will_paginate %>
+  </div>
   <ul class='custom-holiday'=>
     <%= link_to "Create new holiday", "/holidays/new",
                       :class => 'btn btn-success',

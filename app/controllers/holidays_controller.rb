@@ -2,7 +2,9 @@ class HolidaysController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "admin", except: :show
 
   def index
-    @holidays = Holiday.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+    country = params[:country]
+    sql = "SELECT * FROM Holidays WHERE country='#{country}'"
+    @holidays = Holiday.paginate_by_sql(sql, page: params[:page], per_page: 10)
   end
 
   def show

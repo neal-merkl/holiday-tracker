@@ -101,8 +101,18 @@ div#right {
   margin-right: 150px;
 }
 
+#index-top {
+  height: 80px;
+  position: relative;
+}
+
+#country-filter {
+  float: left;
+  margin: 8px -48px 0 40px;
+}
+
 #new-button {
-  margin-top: -40px;
+  margin-top: -30px;
   margin-right: 150px;
   float: left;
 }
